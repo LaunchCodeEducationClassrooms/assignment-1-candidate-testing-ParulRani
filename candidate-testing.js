@@ -8,10 +8,11 @@ let candidateName="";
 let question= "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer= "" ;
-let questions=["Who was the first American woman in space? ","True or false: 5000 meters == 5 kilometers? ","(5 + 3)/2 * 10 = ? ","Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ","What is the minimum crew size for the ISS? "]
+let questions=["Who was the first American woman in space? ","True or false: 5 kilometer == 5000 meters? ","(5 + 3)/2 * 10 = ? ","Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ","What is the minimum crew size for the ISS? "]
 let correctAnswers=["Sally Ride","true","40","Trajectory","3"];
 let candidateAnswers=[];
 let numberOfCorrectAnswer=0;
+
 
 
 function askForName() {
@@ -27,8 +28,8 @@ candidateAnswer=input.question("Your Answer: ");*/
    
   for(let i=0;i<questions.length;i++)
   {
-    console.log(`${i+1}) ${questions[i]}`);
-    candidateAnswers.push(input.question("Your Answer: "));
+    //console.log(`${i+1}) ${questions[i]}`);
+    candidateAnswers.push(input.question(questions[i]));
     //console.log(`Correct Answer: ${correctAnswers[i]}\n`);
 
   }
@@ -43,20 +44,23 @@ function gradeQuiz(candidateAnswers) {
     console.log("correct answer");
   }*/
   let grade;
+  
 
   
   for(let i=0;i<correctAnswers.length;i++)
   {
+    
     if((correctAnswers[i]).toLowerCase()==(candidateAnswers[i]).toLowerCase())
     {
       console.log(`Question ${i+1} Correct!!`)
-      numberOfCorrectAnswer+=1;
+      numberOfCorrectAnswer++;
     }
     else{
       console.log(`Question ${i+1} InCorrect! Correct Answer is ${correctAnswers[i]}`)
     }
   }
-  grade=(numberOfCorrectAnswer)/(questions.length)*100;
+grade=(numberOfCorrectAnswer)/(questions.length)*100;
+
   
 
   return grade;
@@ -70,7 +74,14 @@ function runProgram() {
   
   askQuestion();
   let result=gradeQuiz(this.candidateAnswers);
-  console.log(`\n>>> Overall Grade: ${result}% (${numberOfCorrectAnswer} of ${questions.length} responses correct) <<< `);
+  console.log(`Candidate Name: ${candidateName}`)
+  for(let i=0;i<questions.length;i++)
+  {
+    console.log(questions[i]);
+    console.log(`Your Answer : ${candidateAnswers[i]}`);
+    console.log(`Correct Answer : ${correctAnswers[i]}`);
+  }
+  console.log(`\n>>> Overall Grade: ${result}% $( {numberOfCorrectAnswer} of ${questions.length} responses correct ) <<< `);
   if(result<80)
   console.log(">>> Status: FAILED <<<");
   else
