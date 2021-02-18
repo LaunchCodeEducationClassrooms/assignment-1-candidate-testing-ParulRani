@@ -37,7 +37,7 @@ function askQuestion() {
   {
     console.log(`${i+1}) ${questions[i]}`);
     candidateAnswers.push(input.question("Your Answer: "));
-    console.log(`Correct Answer is : ${correctAnswers[i]}\n`);
+    console.log(`Correct Answer: ${correctAnswers[i]}\n`);
 
   } 
   }
