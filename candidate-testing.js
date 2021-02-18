@@ -49,7 +49,7 @@ function gradeQuiz(candidateAnswers) {
   
   for(let i=0;i<correctAnswers.length;i++)
   {
-    if((correctAnswers[i]).toLowerCase()===(candidateAnswers[i]).toLowerCase())
+    if((correctAnswers[i]).toLowerCase()==(candidateAnswers[i]).toLowerCase())
     {
       numberOfCorrectAnswer+=1;
     }
