@@ -56,7 +56,7 @@ function gradeQuiz(candidateAnswers) {
       console.log(`Question ${i+1} InCorrect! Correct Answer is ${correctAnswers[i]}`)
     }
   }
-  grade=(numberOfCorrectAnswer/questions.length)*100;
+  grade=(numberOfCorrectAnswer)/(questions.length)*100;
   
 
   return grade;
