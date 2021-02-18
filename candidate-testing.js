@@ -81,7 +81,7 @@ function runProgram() {
     console.log(`Your Answer : ${candidateAnswers[i]}`);
     console.log(`Correct Answer : ${correctAnswers[i]}`);
   }
-  console.log(`\n>>> Overall Grade: ${result}% $( {numberOfCorrectAnswer} of ${questions.length} responses correct ) <<< `);
+  console.log(`>>> Overall Grade: ${result}% (${numberOfCorrectAnswer} of ${questions.length} responses correct) <<<`)
   if(result<80)
   console.log(">>> Status: FAILED <<<");
   else
