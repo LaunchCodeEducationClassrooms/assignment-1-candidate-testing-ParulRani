@@ -15,7 +15,7 @@ let numberOfCorrectAnswer=0;
 
 
 function askForName() {
-  candidateName=input.question("Enter your name: ");
+  candidateName=input.question("Candidate Name: ");
   // TODO 1.1b: Ask for candidate's name //
 
 }
@@ -35,9 +35,9 @@ function askQuestion() {
   
   for(let i=0;i<questions.length;i++)
   {
-    console.log(`\n${i+1}) ${questions[i]}`);
+    console.log(`${i+1}) ${questions[i]}`);
     candidateAnswers.push(input.question("Your Answer: "));
-    console.log(`Correct Answer is : ${correctAnswers[i]}`);
+    console.log(`Correct Answer is : ${correctAnswers[i]}\n`);
 
   } 
   }
@@ -63,7 +63,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log(`Hello ${candidateName} Welcome into the Quiz`);
+  //console.log(`Hello ${candidateName} Welcome into the Quiz`);
   
   
   askQuestion();
